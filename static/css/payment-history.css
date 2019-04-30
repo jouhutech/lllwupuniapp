@@ -1,0 +1,50 @@
+.payment-history-top {
+	color: #414141;
+	padding: 0 40upx;
+	font-size: 28upx;
+	border-bottom: #E8E8E8 1upx solid;
+}
+
+.payment-history-top .history-top-title {
+	padding-top: 34upx;
+}
+
+.details-top-project {
+	display: flex;
+	padding: 46upx 0;
+}
+
+.details-top-project text {
+	flex: 1;
+}
+
+.details-top-project text:last-child {
+	color: #fbb11b;
+	text-align: right;
+}
+
+.details-top-data {
+	color: #b6b6b6;
+}
+
+.history-top-time{
+	display: flex;
+	padding: 46upx 0;
+}
+
+.history-top-time picker{
+	flex: 1;
+	height: 60upx;
+	background-color: #f4f4f4;
+	border-radius: 8upx;
+}
+.history-top-time .uni-input{
+	line-height: 60upx;
+	padding: 0 25upx;
+	text-align: center;
+}
+.history-top-time text{
+	width: 60upx;
+	line-height: 60upx;
+	text-align: center;
+}

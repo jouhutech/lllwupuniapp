@@ -1,0 +1,43 @@
+{
+    "pages" : [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+		    "path" : "pages/login/index",
+		    "style" : {}
+		},
+		{
+		    "path" : "pages/index/index",
+		    "style" : {}
+		},
+		{
+			"path" : "pages/payment/index",
+		    "style" : {
+		        "navigationBarTitleText" : "怡众名城",
+				"navigationBarBackgroundColor" : "#4487f7",
+				"navigationBarTextStyle" : "white"
+		    }
+		},
+        {
+            "path" : "pages/mine/index",
+            "style" : {}
+        },
+		{
+            "path" : "pages/search/index",
+            "style" : {}
+        },
+		{
+		    "path" : "pages/payment-history/index",
+		    "style" : {}
+		},
+		{
+		    "path" : "pages/payment-details/index",
+		    "style" : {}
+		}
+    ],
+    "globalStyle" : {
+        "navigationBarTextStyle" : "black",
+        "navigationBarTitleText" : "怡众名城",
+        "navigationBarBackgroundColor" : "#F8F8F8",
+        "backgroundColor" : "#F8F8F8"
+    }
+}

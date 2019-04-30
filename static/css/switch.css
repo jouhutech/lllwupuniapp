@@ -1,0 +1,55 @@
+.switch-content {
+	display: flex;
+	height: 94upx;
+	line-height: 94upx;
+	font-size: 28upx;
+	color: #414141;
+	border-bottom: 1upx solid #E8E8E8;
+	padding: 0 40upx;
+}
+
+.switch-content text {
+	flex: 1;
+}
+
+.switch-content text:last-child {
+	text-align: right;
+}
+
+.current-active text:first-child {
+	color: #4487f7;
+}
+
+.switch-active text:last-child {
+	color: #fbb11b;
+}
+
+.switch-bottom {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 98upx;
+	line-height: 98upx;
+	text-align: center;
+	color: #414141;
+	font-size: 34upx;
+	background: #FFFFFF;
+}
+
+.switch-bottom image {
+	width: 44upx;
+	height: 44upx;
+	padding-top: 25upx;
+	padding-right: 16upx;
+}
+
+.switch-bottom view {
+	display: inline-block;
+	vertical-align: top;
+	color: #414141;
+}
+
+.switch-top {
+	margin-bottom: 98upx;
+}

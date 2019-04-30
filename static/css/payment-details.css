@@ -1,0 +1,28 @@
+.payment-details-top {
+	color: #414141;
+	padding: 0 40upx;
+	font-size: 28upx;
+	border-bottom: #E8E8E8 1upx solid;
+}
+
+.payment-details-top view:first-child {
+	padding-top: 34upx;
+}
+
+.details-top-project {
+	display: flex;
+	padding: 46upx 0;
+}
+
+.details-top-project text {
+	flex: 1;
+}
+
+.details-top-project text:last-child {
+	color: #fbb11b;
+	text-align: right;
+}
+
+.details-top-data {
+	color: #b6b6b6;
+}

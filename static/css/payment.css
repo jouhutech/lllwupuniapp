@@ -1,0 +1,278 @@
+.pay {
+		background-color: #f5f5f5;
+		width: 100%;
+		height: 100%;
+	}
+
+	.pay-content {
+		text-align: center;
+		margin: 0 20upx;
+		position: relative;
+		z-index: 9;
+	}
+
+	.payment-bj {
+		width: 100%;
+		height: 400upx;
+		position: absolute;
+		top: 0;
+	}
+
+	.pay-position {
+		padding: 25upx 0;
+		text-align: left;
+	}
+
+	.pay-position image {
+		width: 36upx;
+		height: 36upx;
+	}
+
+	.pay-position view {
+		font-size: 30upx;
+		color: #ffffff;
+		padding-left: 20upx;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.pay-time {
+		padding: 0 40upx;
+		background-color: #ffffff;
+		box-shadow: 0upx 5upx 24upx 0upx rgba(199, 199, 199, 0.47);
+		border-radius: 20upx;
+		border: solid 1upx #ececec;
+	}
+
+	.pay-time .pay-time-top {
+		height: 134upx;
+		line-height: 134upx;
+		border-bottom: 1upx solid #d3d3d3;
+		display: flex;
+	}
+
+	.pay-time .pay-time-top text:first-child {
+		font-size: 34upx;
+		color: #414141;
+		flex: 1;
+	}
+
+	.pay-time .pay-time-top text:last-child {
+		font-size: 28upx;
+		color: #b6b6b6;
+		text-align: right;
+		flex: 1;
+	}
+
+	.pay-time .pay-time-bottom .pay-time-section {
+		font-size: 28upx;
+		color: #414141;
+		text-align: left;
+		padding: 45upx 0;
+	}
+
+	.pay-time .pay-time-bottom .pay-time-bottom-cen {
+		display: flex;
+		margin-bottom: 66upx;
+	}
+
+	.pay-time .pay-time-bottom .pay-time-bottom-cen .pay-time-data:first-child {
+		text-align: left;
+	}
+
+	.pay-time .pay-time-bottom .pay-time-bottom-cen .pay-time-data:last-child {
+		text-align: right;
+	}
+
+	.pay-time .pay-time-bottom .pay-time-bottom-cen .pay-time-data {
+		flex: 1;
+		letter-spacing: 3upx;
+	}
+
+	.pay-time .pay-time-bottom .pay-time-bottom-cen .pay-time-symbol {
+		width: 60upx;
+	}
+
+	.pay-data {
+		display: flex;
+		padding: 34upx 0;
+	}
+
+	.pay-data-flex {
+		flex: 1;
+	}
+
+	.pay-data-content {
+		width: 90%;
+		height: 106upx;
+		line-height: 106upx;
+		font-size: 28upx;
+		background-color: #FFFFFF;
+		box-shadow: 0upx 5upx 24upx 0upx rgba(199, 199, 199, 0.47);
+		border-radius: 14upx;
+	}
+
+	.pay-data-content.active {
+		background-color: #4487f7;
+		color: #FFFFFF;
+	}
+	
+	.pay-data-text{
+		display: inline-block;
+		vertical-align: top;
+	}
+	
+	.pay-data-content image{
+		padding-top: 35upx;
+		padding-right: 14upx;
+	}
+	
+	.pay-data-half{
+		width: 50upx;
+		height: 47upx;
+		
+	}
+	
+	.pay-data-one{
+		width: 23upx;
+		height: 48upx;
+	}
+	
+	.pay-data-two{
+		width: 37upx;
+		height: 47upx;
+	}
+
+	.pay-cost-layout {
+		padding: 0 40upx;
+		background: #FFFFFF;
+		border-radius: 20px;
+	}
+
+	.pay-cost-explain {
+		height: 128upx;
+		line-height: 128upx;
+		border-bottom: 1px dashed #d3d3d3;
+		display: flex;
+	}
+
+	.explain-data {
+		font-size: 28upx;
+		color: #414141;
+		text-align: left;
+		flex: 1;
+	}
+
+	.explain-pric {
+		font-size: 36upx;
+		color: #ff3f34;
+		flex: 1;
+		text-align: right;
+	}
+
+	.explain-pric text {
+		font-size: 24upx;
+		padding-right: 10upx;
+	}
+
+	.pay-cost-list {
+		margin-bottom: 40upx;
+	}
+
+	.list-surface {
+		padding: 32upx 0;
+		text-align: left;
+		border-bottom: 1px solid #d3d3d3;
+	}
+
+	.list-surface:last-child {
+		border-bottom: none;
+	}
+
+	.list-surface label {
+		font-size: 34upx;
+		color: #414141;
+	}
+
+	.pay-cost-section {
+		padding: 20upx 55upx;
+	}
+
+	.pay-cost-section image {
+		width: 24upx;
+		height: 24upx;
+	}
+
+	.pay-cost-section text {
+		font-size: 28upx;
+		color: #b6b6b6;
+		padding-left: 12upx;
+	}
+
+	.pay-cost-price {
+		font-size: 28upx;
+		color: #ff655c;
+		padding: 0 55upx;
+	}
+
+	.pay-bottom {
+		display: flex;
+		height: 98upx;
+		line-height: 98upx;
+		border-top: 1px solid #E8E8E8;
+		background-color: #FFFFFF;
+	}
+
+	.all-election {
+		flex: 1;
+		text-align: center;
+		color: #b6b6b6;
+		font-size: 28upx;
+	}
+
+	.pay-bottom .total-price {
+		font-size: 28upx;
+		color: #ff655c;
+		text-align: right;
+		padding-right: 36upx;
+		flex: 1;
+	}
+
+	.pay-bottom .fast-payment {
+		width: 240upx;
+		height: 98upx;
+		float: right;
+		background-image: linear-gradient(-45deg,
+			#44c7f7 0%,
+			#4487f7 100%),
+			linear-gradient(#4487f7,
+			#4487f7);
+		background-blend-mode: normal,
+			normal;
+		border-radius: 86upx 0upx 0upx 0upx;
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 28upx;
+	}
+
+	/* checkbox未选中时样式 */
+	checkbox .wx-checkbox-input {
+		width: 42upx;
+		height: 42upx;
+		border-radius: 10upx;
+		margin-top: -4upx;
+		margin-right: 22upx;
+	}
+
+	/* checkbox选中时样式 */
+	checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+		background-color: #4487f7;
+		border: 1upx solid #4487f7;
+		color: #FFFFFF;
+		width: 58upx;
+		height: 58upx;
+		line-height: 58upx;
+		text-align: center;
+		border-radius: 10upx;
+		margin-top: -4upx;
+	}

@@ -1,0 +1,143 @@
+.login {
+	text-align: center;
+}
+
+.login-logo {
+	width: 246upx;
+	height: 252upx;
+	margin-top: 430upx;
+}
+
+.login-wx {
+	width: 38upx;
+	height: 35upx;
+	padding-right: 20upx;
+	vertical-align: top;
+	padding-top: 25upx;
+}
+
+.login-font {
+	font-size: 28upx;
+	display: inline-block;
+	vertical-align: top;
+	color: #ffffff;
+	line-height: 80upx;
+}
+.login-input {
+	position: absolute;
+	width: 70%;
+	left: 50%;
+	margin-left: -35%;
+	height: 80upx;
+	bottom: 198upx;
+}
+.login-btn {
+	position: absolute;
+	width: 70%;
+	left: 50%;
+	margin-left: -35%;
+	height: 80upx;
+	bottom: 98upx;
+	background-color: #04c160;
+	box-shadow: 0upx 5upx 24upx 0upx rgba(160, 160, 160, 0.66);
+	border-radius: 20upx;
+}
+
+.login-eject {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .3);
+}
+
+.login-eject-content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: #FFFFFF;
+	width: 100%;
+	text-align: left;
+}
+
+.login-eject-title {
+	font-size: 30upx;
+	padding-bottom: 19upx;
+	margin: 40upx;
+}
+
+.login-eject-title image {
+	width: 46upx;
+	height: 46upx;
+	padding-right: 16upx;
+}
+
+.login-eject-title view {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 5upx;
+}
+
+.login-eject-title view text {
+	padding-left: 32upx;
+}
+
+.login-eject-phone {
+	font-size: 50upx;
+	margin: 0 40upx;
+}
+
+.login-eject-binding {
+	display: flex;
+	margin-top: 49upx;
+	margin: 49upx 40upx 0 40upx;
+	height: 100upx;
+	line-height: 100upx;
+	border-bottom: 1px solid #D3D3D3;
+}
+
+.login-eject-binding text {
+	flex: 1;
+}
+
+.login-eject-binding .mobile {
+	font-size: 34upx;
+	color: #414141;
+}
+
+.login-eject-binding .bindnumber {
+	font-size: 24upx;
+	color: #b6b6b6;
+}
+
+.other-numbers {
+	color: #04c160;
+	font-size: 34upx;
+	padding-top: 26upx;
+	text-decoration: underline;
+	margin: 0 40upx;
+}
+
+.login-eject-btn {
+	display: flex;
+	margin: 80upx 40upx;
+	font-size: 32upx;
+}
+
+.login-eject-btn .btn:first-child{
+	margin-right: 15upx;
+	background-color: #ededed;
+}
+
+.login-eject-btn .btn:last-child{
+	margin-left: 15upx;
+	background-color: #04c160;
+	color: #FFFFFF;
+}
+
+.login-eject-btn .btn{
+	flex: 1;
+	height: 80upx;
+	line-height: 80upx;
+}

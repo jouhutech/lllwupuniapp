@@ -1,0 +1,50 @@
+.choose-mobile-title {
+	padding: 40upx;
+	color: #414141;
+	font-size: 34upx;
+}
+
+.choose-mobile-search {
+	display: flex;
+	padding: 0 40upx;
+}
+
+.choose-mobile-search .input {
+	flex: 1;
+	background-color: #f4f4f4;
+	height: 80upx;
+	margin-right: 30upx;
+	border-radius: 8upx;
+	font-size: 28upx;
+	padding: 0 25upx;
+}
+
+.choose-mobile-search .btn {
+	height: 80upx;
+	line-height: 80upx;
+	background-color: #04c160;
+	color: #FFFFFF;
+}
+
+.choose-mobile-phlist {
+	margin-top: 40upx;
+}
+
+.choose-mobile-list {
+	display: flex;
+	color: #414141;
+	font-size: 28upx;
+	height: 94upx;
+	line-height: 94upx;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 0 40upx;
+}
+
+.choose-mobile-list text {
+	flex: 1;
+}
+
+.choose-mobile-list text:last-child {
+	color: #fbb11b;
+	text-align: right;
+}
