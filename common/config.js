@@ -1,5 +1,4 @@
-const serviceUrl = '接口路径';  
-//const serviceUrl = 'http://192.168.1.188/lllwupapi/public/jmobile/';  
+const serviceUrl = 'https://jouhu.com/lllwupapi/public/index.php/jmobile/';  
 const newTime = Date.now || function () {  
     return new Date().getTime();  
 };  

@@ -14,7 +14,7 @@
 				<view class="index-content-center-time" v-else >请先绑定房屋</view>
 			</view>
 			<button type="btn" class="pay-btn" v-if="data_obj.room_id" @click="redirectToUrl('/pages/payment/index')">去缴费</button>
-			<button type="btn" class="pay-btn" v-else @click="redirectToUrl('/pages/mine/index')">去绑定房屋</button>
+			<button type="btn" class="pay-btn" v-else @click="redirectToUrl('/pages/switch/index')">去绑定房屋</button>
 		</view>
 		<view class="footer">
 			

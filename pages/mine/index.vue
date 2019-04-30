@@ -7,11 +7,11 @@
 				<text class="mine-title">{{nickName}}</text>
 				
 			</view>
-			<view class="mine-house">
+			<view class="mine-house" @click="look_search">
 				<view class="mine-house-house">我的房产</view>
-				<view class="mine-house-content">
+				<view class="mine-house-content" >
 					<text class="text-left">{{houseName}}</text>
-					<text class="text-right" @click="look_search">更多房产 ></text>
+					<text class="text-right" >更多房产 ></text>
 				</view>
 			</view>
 			<view class="mine-pay-history" @click="look_pay">
@@ -25,7 +25,7 @@
 			<view class="f-menu" @click="redirectToUrl('/pages/index/index')">
 				<image src="/static/images/home.png"></image>
 			</view>
-			<view class="f-menu" @click="redirectTo('/pages/mine/index')">
+			<view class="f-menu" @click="redirectToUrl('/pages/mine/index')">
 				<image src="/static/images/mine-b.png"></image>
 			</view>
 		</view>
@@ -52,7 +52,6 @@
 			}
 		},
 		onLoad() {
-			
 			_self = this
 			_self.getMemberRoom()	// 获取用户房间数据
 			
@@ -75,7 +74,12 @@
 					success: function (res) {
 						if(res.data.status == 1){
 							if(res.data.data){
-								_self.houseName = res.data.data.is_default.full_room_name
+								if(res.data.data.is_default.full_room_name){
+									_self.houseName = res.data.data.is_default.full_room_name;
+								}else{
+									_self.houseName = '';
+								}
+								
 								_self.name = res.data.data.name
 							}
 							
@@ -97,7 +101,7 @@
 			},
 			logout : function (e){
 				uni.clearStorageSync();
-				uni.redirectTo({
+				uni.reLaunch({
 					url: '/pages/login/index'
 				});
 			},

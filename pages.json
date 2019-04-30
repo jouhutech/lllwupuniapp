@@ -26,6 +26,10 @@
             "style" : {}
         },
 		{
+		    "path" : "pages/switch/index",
+		    "style" : {}
+		},
+		{
 		    "path" : "pages/payment-history/index",
 		    "style" : {}
 		},

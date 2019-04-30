@@ -135,7 +135,7 @@
 												icon:'none' ,
 												duration: 2000
 											}) 
-											uni.reLaunch({
+											uni.redirectTo({
 												url: '/pages/index/index'
 											});
 									  }
