@@ -60,6 +60,7 @@
 			},
 			//监听输入
 			inputChange(event) {
+				var member_id = uni.getStorageSync('user_id') // 用户id
 				//兼容引入组件时传入参数情况
 				var keyword = event.detail ? event.detail.value : event;
 				if (!keyword) {
@@ -92,12 +93,14 @@
 					keywordArr = [];
 				for (var i = 0; i < len; i++) {
 					var row = kstr[i];
-					//定义高亮
-					var html = row.replace(keyword, "<span style='color: #4487f7;'>" + keyword + "</span>");
-					var tmpObj = {
-						keyword: row,
-						htmlStr: html
-					};
+					if(row){
+						//定义高亮
+						var html = row.replace(keyword, "<span style='color: #4487f7;'>" + keyword + "</span>");
+						var tmpObj = {
+							keyword: row,
+							htmlStr: html
+						};
+					}
 					keywordArr.push(tmpObj)
 				}
 				return keywordArr;
@@ -105,6 +108,7 @@
 
 			// 获取楼栋列表
 			getBuildingList: function(e) {
+				var member_id = uni.getStorageSync('user_id') // 用户id
 				uni.request({
 					url: serviceUrl + 'personal_center/getBuildingList',
 					data: {
@@ -126,7 +130,7 @@
 
 			// 获取住户列表
 			getRoomList: function(building_id) {
-
+				var member_id = uni.getStorageSync('user_id') // 用户id
 				uni.request({
 					url: serviceUrl + 'personal_center/getRoomList',
 					data: {
@@ -178,12 +182,13 @@
 
 			// 绑定新房产 
 			addUserRoom: function(room_data) {
+				console.log(member_id);
 				var building_id = room_data['building_id']
 				var unit_id = room_data['unit_id']
 				var room_id = room_data['room_id']
 				var room_type_id = room_data['room_type_id']
 				var full_room_name = room_data['full_room_name']
-
+				var member_id = uni.getStorageSync('user_id') // 用户id
 				uni.request({
 					url: serviceUrl + 'personal_center/add_user_room',
 					data: {
@@ -204,8 +209,8 @@
 								title: '绑定完成',
 								duration: 2000,
 								complete : function(){
-									uni.navigateTo({
-										url: '/pages/payment/index'
+									uni.reLaunch({
+										url: '/pages/index/index'
 									});
 								}
 							});

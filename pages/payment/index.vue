@@ -2,7 +2,7 @@
 	<view class="pay">
 		<image class="payment-bj" src="/static/images/pay-bj.png"></image>
 		<view class="pay-content">
-			<view class="pay-position">
+			<view class="pay-position" @click="redirectToUrl('/pages/switch/index')">
 				<image src="/static/images/pay-position.png"></image>
 				<view>{{data_obj.room_name}}</view>
 			</view>
@@ -14,7 +14,7 @@
 				<view class="pay-time-bottom">
 					<view class="pay-time-section">本次缴费区间</view>
 					<view class="pay-time-bottom-cen">
-						<text class="pay-time-data">{{data_obj.property_fee_endtime}}</text>
+						<text class="pay-time-data">{{data_obj.property_fee_next_starttime}}</text>
 						<text class="pay-time-symbol">~</text>
 						<text class="pay-time-data">{{data_obj.property_fee_next_endtime}}</text>
 					</view>
@@ -54,7 +54,8 @@
 						</checkbox-group>
 						<view class="pay-cost-section">
 							<image src="/static/images/pay-section.png"></image>
-							<text>{{data_obj.property_fee_endtime}}~{{data_obj.property_fee_next_endtime}}</text>
+							<text v-if="values.cate!=3">{{data_obj.property_fee_next_starttime}}~{{data_obj.property_fee_next_endtime}}</text>
+							<text v-else>一次性费用</text>
 						</view>
 						<view class="pay-cost-price">{{values.total_fee}}</view>
 					</view>
@@ -102,6 +103,7 @@
 					room_name : '',
 					room_id : '',
 					property_fee_endtime: '',
+					property_fee_next_starttime: '',
 					property_fee_next_endtime: '',
 					price: 0.00,
 				},
@@ -138,8 +140,10 @@
 						_self.data_obj.room_name = data.data.full_room_name;
 						_self.data_obj.room_id = data.data.room_id;
 						_self.data_obj.property_fee_endtime = data.data.property_fee_endtime;
+						
+						_self.data_obj.property_fee_next_starttime = data.data.property_fee_next_starttime;
 			
-						var curDateArr = data.data.property_fee_endtime.split('-');
+						var curDateArr = data.data.property_fee_next_starttime.split('-');
 						var curYear = Number(curDateArr[0]);
 						var curMonth = Number(curDateArr[1]);
 						var curDay = Number(curDateArr[2]);
@@ -176,7 +180,7 @@
 				_self.selectEffectClass = e;
 				_self.imageSrc = imageUrl[e];
 				
-				var curDateArr = _self.data_obj.property_fee_endtime.split('-');
+				var curDateArr = _self.data_obj.property_fee_next_starttime.split('-');
 				var curYear = Number(curDateArr[0]);
 				var curMonth = Number(curDateArr[1]);
 				var curDay = Number(curDateArr[2]);
@@ -222,7 +226,7 @@
 					url: serviceUrl + 'fee_order/check',
 				    data: {
 				      'room_id'    :    obj.room_id,
-					  'start_time' : 	obj.property_fee_endtime,
+					  'start_time' : 	obj.property_fee_next_starttime,
 					  'end_time'   :   	obj.property_fee_next_endtime,
 				    },
 				    method: 'GET',
@@ -288,8 +292,8 @@
 									signType: data.data.signType,
 									paySign: data.data.paySign,
 									'success': function (res) {
-										console.log(res.errMsg);    //requestPayment:ok==>调用支付成功
-
+										console.log(11111111);    //requestPayment:ok==>调用支付成功
+										console.log(res);
 
 										uni.showToast({
 											title: '缴费成功',//这里打印出报名成功
@@ -297,7 +301,7 @@
 											duration: 6000
 										})
 										
-										uni.redirectTo({
+										uni.navigateTo({
 											url: '/pages/payment/index'
 										})
 
@@ -309,23 +313,12 @@
 											duration: 6000
 										})
 										
-										uni.redirectTo({
+										uni.navigateTo({
 											url: '/pages/payment/index'
 										})
 									
 									},
-									'complete': function (res) {
-										uni.showToast({
-											title: '支付失败',//这里打印出报名成功
-											icon: 'success',
-											duration: 6000
-										})
-										
-										uni.redirectTo({
-											url: '/pages/payment/index'
-										})
-							
-									}
+									
 								})
 		 					} else {
 		 						uni.showToast({
@@ -367,7 +360,7 @@
 					this.select_price = this.select_price+Number(price[1]);
 				}, this);
 				
-			
+				this.select_price = this.select_price.toFixed(2);
 			},
 			checkedAll () {
 			  this.isCheckedAll = !this.isCheckedAll
@@ -383,6 +376,7 @@
 				  this.select_price = this.select_price+Number(obj.total_fee);
 				 
 				}, this)
+				this.select_price = this.select_price.toFixed(2);
 			  } else {
 		
 				this.fruitIds = [];
@@ -390,7 +384,19 @@
 				this.select_price = 0.00
 			  }
 			},
-
+			//页面跳转
+			redirectToUrl: function (url) {
+				if(url != '/pages/mine/index'){
+					uni.navigateTo({
+						url: url
+					});
+				}else{
+					uni.reLaunch({
+						url: url
+					});
+				}
+				
+			},
 
 		
 		},

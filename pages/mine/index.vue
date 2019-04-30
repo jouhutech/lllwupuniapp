@@ -1,7 +1,7 @@
 <template>
 	<view class="mine">
 		<view class="mine-content">
-			<image class="mine-edit" src="/static/images/mine-edit.png"></image>
+			<!-- <image class="mine-edit" src="/static/images/mine-edit.png"></image> -->
 			<image class="mine-logo" :src="avatarUrl"></image>
 			<view>
 				<text class="mine-title">{{nickName}}</text>
@@ -25,7 +25,7 @@
 			<view class="f-menu" @click="redirectToUrl('/pages/index/index')">
 				<image src="/static/images/home.png"></image>
 			</view>
-			<view class="f-menu" @click="redirectToUrl('/pages/mine/index')">
+			<view class="f-menu">
 				<image src="/static/images/mine-b.png"></image>
 			</view>
 		</view>
@@ -95,7 +95,7 @@
 				});
 			},
 			look_pay : function (e){
-				uni.redirectTo({
+				uni.navigateTo({
 					url: '/pages/payment-history/index'
 				});
 			},
@@ -107,7 +107,7 @@
 			},
 			//页面跳转
 			redirectToUrl: function (url) {
-				uni.navigateTo({
+				uni.reLaunch({
 					url: url
 				});
 			},

@@ -47,7 +47,7 @@
 			_self = this;
 			// get save user_id if have a user_id into homepage
 			if(uni.getStorageSync('user_id')){
-				uni.redirectTo({
+				uni.reLaunch({
 					url: '/pages/index/index'
 				});
 			}
@@ -135,7 +135,7 @@
 												icon:'none' ,
 												duration: 2000
 											}) 
-											uni.redirectTo({
+											uni.reLaunch({
 												url: '/pages/index/index'
 											});
 									  }
@@ -169,7 +169,7 @@
 							icon:'none' ,
 							duration: 2000
 						}) 
-						uni.redirectTo({
+						uni.reLaunch({
 							url: '/pages/index/index'
 						});
 				  }

@@ -89,9 +89,11 @@
 		methods: {
 			startDateChange: function(e) {
 				_self.start_time = e.target.value
+				_self.getFeeOrderList()
 			},
 			endDateChange: function(e) {
 				_self.end_time = e.target.value
+				_self.getFeeOrderList()
 			},
 			getDate(type) {
 				const date = new Date();
@@ -110,6 +112,7 @@
 			},
 			// 获取缴费订单列表
 			getFeeOrderList : function (e) {
+				var member_id = uni.getStorageSync('user_id')
 				uni.request({
 					url: serviceUrl + 'personal_center/getFeeOrderList',
 					data: {

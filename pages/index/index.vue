@@ -4,21 +4,21 @@
 			<view class="index-content-top">
 				<image class="index-position" src="/static/images/index-position.png"></image>
 				<view v-if="data_obj.room_id" @click="redirectToUrl('/pages/switch/index')">{{data_obj.room_name}}</view>
-				<view v-else >请先绑定房屋</view>
+				<view v-else @click="redirectToUrl('/pages/switch/index')">请先绑定房屋</view>
 				<image class="index-arrow" src="/static/images/index-arrow.png"></image>
 			</view>
 			<view class="index-content-center">
 				<image src="/static/images/index-img.png"></image>
 				<view class="index-content-center-data">上次缴费结束日期</view>
 				<view class="index-content-center-time" v-if="data_obj.room_id">{{data_obj.property_fee_endtime}}</view>
-				<view class="index-content-center-time" v-else >请先绑定房屋</view>
+				<view class="index-content-center-time" @click="redirectToUrl('/pages/switch/index')" v-else >请先绑定房屋</view>
 			</view>
 			<button type="btn" class="pay-btn" v-if="data_obj.room_id" @click="redirectToUrl('/pages/payment/index')">去缴费</button>
 			<button type="btn" class="pay-btn" v-else @click="redirectToUrl('/pages/switch/index')">去绑定房屋</button>
 		</view>
 		<view class="footer">
 			
-			<view class="f-menu" @click="redirectToUrl('/pages/index/index')">
+			<view class="f-menu">
 				<image src="/static/images/home-b.png"></image>
 			</view>
 			<view class="f-menu" @click="redirectToUrl('/pages/mine/index')">
@@ -58,9 +58,12 @@
 					var data = res.data;
 		
 					if (data.status == 1) {
-						_self.data_obj.room_name = data.data.full_room_name;
-						_self.data_obj.room_id = data.data.room_id;
-						_self.data_obj.property_fee_endtime = data.data.property_fee_endtime;
+						if(data.data){
+							_self.data_obj.room_name = data.data.full_room_name;
+							_self.data_obj.room_id = data.data.room_id;
+							_self.data_obj.property_fee_endtime = data.data.property_fee_endtime;
+						}
+						
 					} 
 			    },
 			    fail: function () {
@@ -76,9 +79,16 @@
 			
 			//页面跳转
 			redirectToUrl: function (url) {
-				uni.navigateTo({
-					url: url
-				});
+				if(url != '/pages/mine/index'){
+					uni.navigateTo({
+						url: url
+					});
+				}else{
+					uni.reLaunch({
+						url: url
+					});
+				}
+				
 			},
 			
 		}

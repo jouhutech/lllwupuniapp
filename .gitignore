@@ -3,3 +3,6 @@ unpackage/*
 lllwup.keystore
 lllwup.keystore.old
 manifest.json
+cer.p12
+lllwup.mobileprovision
+package.json
