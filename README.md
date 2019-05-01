@@ -15,9 +15,9 @@
 > * app SDK配置勾选微信登录填入appid及appsecret
 > * app模块权限配置勾选OAuth(登录鉴权)
 ## 图片展示
-![](http://jouhu.com/lllwupimg/1.jpg)
-![](http://jouhu.com/lllwupimg/2.jpg)
-![](http://jouhu.com/lllwupimg/3.jpg)
-![](http://jouhu.com/lllwupimg/4.jpg)
-![](http://jouhu.com/lllwupimg/5.jpg)
-![](http://jouhu.com/lllwupimg/6.jpg)
+![](https://jouhu.com/lllwupimg/1.jpg)
+![](https://jouhu.com/lllwupimg/2.jpg)
+![](https://jouhu.com/lllwupimg/3.jpg)
+![](https://jouhu.com/lllwupimg/4.jpg)
+![](https://jouhu.com/lllwupimg/5.jpg)
+![](https://jouhu.com/lllwupimg/6.jpg)
