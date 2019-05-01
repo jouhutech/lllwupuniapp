@@ -16,7 +16,7 @@
 > * app模块权限配置勾选OAuth(登录鉴权)
 ## 图片展示
 
-![](https://jouhu.com/lllwupimg/11.png)
+![](https://jouhu.com/lllwupimg/11.jpg)
 
 ![](https://jouhu.com/lllwupimg/22.jpg)
 
