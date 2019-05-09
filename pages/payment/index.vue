@@ -301,20 +301,21 @@
 											duration: 6000
 										})
 										
-										uni.navigateTo({
-											url: '/pages/payment/index'
+										uni.reLaunch({
+											url: '/pages/index/index'
 										})
 
 									},
 									'fail': function (res) {
+										
 										uni.showToast({
 											title: '支付失败',//这里打印出报名成功
 											icon: 'success',
 											duration: 6000
 										})
-										
-										uni.navigateTo({
-											url: '/pages/payment/index'
+										console.log(123123)
+										uni.reLaunch({
+											url: '/pages/index/index'
 										})
 									
 									},

@@ -13,8 +13,8 @@
 				<view class="index-content-center-time" v-if="data_obj.room_id">{{data_obj.property_fee_endtime}}</view>
 				<view class="index-content-center-time" @click="redirectToUrl('/pages/switch/index')" v-else >请先绑定房屋</view>
 			</view>
-			<button type="btn" class="pay-btn" v-if="data_obj.room_id" @click="redirectToUrl('/pages/payment/index')">去缴费</button>
-			<button type="btn" class="pay-btn" v-else @click="redirectToUrl('/pages/switch/index')">去绑定房屋</button>
+			<view class="pay-btn" v-if="data_obj.room_id" @click="redirectToUrl('/pages/payment/index')">去缴费</view>
+			<view class="pay-btn" v-else @click="redirectToUrl('/pages/switch/index')">去绑定房屋</view>
 		</view>
 		<view class="footer">
 			

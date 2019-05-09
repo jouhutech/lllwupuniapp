@@ -36,6 +36,10 @@
 		{
 		    "path" : "pages/payment-details/index",
 		    "style" : {}
+		},
+		{
+		    "path" : "pages/binding/index",
+		    "style" : {}
 		}
     ],
     "globalStyle" : {

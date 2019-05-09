@@ -5,6 +5,7 @@
 			<image class="mine-logo" :src="avatarUrl"></image>
 			<view>
 				<text class="mine-title">{{nickName}}</text>
+				<text class="mine-title" v-if="!show">-{{purePhoneNumber}}</text>
 				
 			</view>
 			<view class="mine-house" @click="look_search">
@@ -18,7 +19,16 @@
 				<text>我的缴费历史</text>
 				<image class="pay-img" src="/static/images/mine-gold.png"></image>
 			</view>
-			<button class="mine-btn" @click="logout">退出账号</button>
+			<view class="mine-pay-history" @click="look_tel" v-if="show">
+				<text>绑定手机号码</text>
+		
+				<image class="pay-img pay-img-left" src="/static/images/mine-bind2.png"></image>
+			</view>
+			<view class="mine-pay-history" @click="look_tel" v-else>
+				<text>切换手机号码</text>
+				<image class="pay-img pay-img-left" src="/static/images/mine-bind1.png"></image>
+			</view>
+			<view class="mine-btn" @click="logout">退出账号</view>
 		</view>
 		<view class="footer">
 			
@@ -37,7 +47,7 @@
 	var serviceUrl = config.serviceUrl
 	var _self;
 	
-	var member_id  = uni.getStorageSync('user_id')	// 用户id
+	
 	
 	
 	export default {
@@ -48,6 +58,8 @@
 				name : '',
 				avatarUrl: '',
 				nickName : '',
+				show: true,
+				purePhoneNumber : '',
 			
 			}
 		},
@@ -60,10 +72,17 @@
 		onReady(){
 			_self.avatarUrl = uni.getStorageSync('avatarUrl');
 			_self.nickName = uni.getStorageSync('nickName');
+			if(uni.getStorageSync('purePhoneNumber')){
+				_self.show = false;
+				_self.purePhoneNumber = uni.getStorageSync('purePhoneNumber');
+			}
+			console.log(_self.show);
+			
 		},
 		methods: {
 			// 获取用户房间数据
 			getMemberRoom: function (e) {
+				var member_id  = uni.getStorageSync('user_id')	// 用户id
 				uni.request({
 					url: serviceUrl + 'personal_center/index',
 					data: {
@@ -97,6 +116,11 @@
 			look_pay : function (e){
 				uni.navigateTo({
 					url: '/pages/payment-history/index'
+				});
+			},
+			look_tel : function (e){
+				uni.navigateTo({
+					url: '/pages/binding/index'
 				});
 			},
 			logout : function (e){

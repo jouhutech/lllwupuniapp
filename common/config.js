@@ -1,4 +1,4 @@
-const serviceUrl = 'https://jouhu.com/lllwupapi/public/index.php/jmobile/';  
+const serviceUrl = 'http://jouhu.com/lllwupapi/public/index.php/jmobile/'; 
 const newTime = Date.now || function () {  
     return new Date().getTime();  
 };  
