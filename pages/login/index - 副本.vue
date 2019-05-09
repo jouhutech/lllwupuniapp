@@ -15,19 +15,14 @@
 			<!-- #ifdef MP-WEIXIN -->
 			<image class="login-logo" src="/static/images/logo.png"></image>
 			<!-- wxprogram login page if have userinfo then view phome number key login bottom -->
-			<!-- <button v-if="user_info_status"  class="login-btn"  open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">
+			<button v-if="user_info_status"  class="login-btn"  open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">
 				<image class="login-wx" src="/static/images/login-wx.png"></image>
 				<view class="login-font">手机号一键登录</view>
 			</button>
 			<button v-else  class="login-btn" open-type='getUserInfo' @getuserinfo="appLogin">
 				<image class="login-wx" src="/static/images/login-wx.png"></image>
 				<view class="login-font">请先允许授权</view>
-			</button> -->
-			<button class="login-btn" open-type='getUserInfo' @getuserinfo="appLogin">
-				<image class="login-wx" src="/static/images/login-wx.png"></image>
-				<view class="login-font">一键登录</view>
 			</button>
-			
 			<!-- #endif -->
 			
 		</view>
@@ -253,36 +248,11 @@
 					uni.setStorageSync('unionId',res.data.unionId);
 					uni.setStorageSync('nickName',res.data.nickName);
 					uni.setStorageSync('avatarUrl',res.data.avatarUrl);
-// 					console.log(uni.getStorageSync('openId'));
-// 					console.log(uni.getStorageSync('unionId'));
-// 					console.log(uni.getStorageSync('nickName'));
-// 					console.log(uni.getStorageSync('avatarUrl'));
-// 
-					
-					
-					
-					uni.request({
-					  url: serviceUrl + 'login/index',
-					  data: {
-							unionid: res.data.unionId,
-					  },
-					  method: 'POST',
-					  success: res => {
-							console.log(res);
-							
-							uni.setStorageSync('village_id',res.data.data.village_id);
-							uni.setStorageSync('user_id',res.data.data.user_id);
-							uni.setStorageSync('purePhoneNumber',res.data.data.user_tel);
-							uni.showToast({ 
-								title:'登录成功' ,
-								icon:'none' ,
-								duration: 2000
-							}) 
-							uni.reLaunch({
-								url: '/pages/index/index'
-							});
-					  }
-					})
+					console.log(uni.getStorageSync('openId'));
+					console.log(uni.getStorageSync('unionId'));
+					console.log(uni.getStorageSync('nickName'));
+					console.log(uni.getStorageSync('avatarUrl'));
+
 
 				  }
 				})

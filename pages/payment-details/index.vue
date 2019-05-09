@@ -1,7 +1,7 @@
 <template>
 	<view class="payment-details">
 		<view class="payment-details-top">
-			<view>此历史缴费时间</view>
+			<view class="payment-details-pad_top">此历史缴费时间</view>
 			<view class="details-top-project">
 				<text>{{fetch_fee_time}}</text>
 				<text>共计：{{use_real_money}}</text>
@@ -9,9 +9,10 @@
 		</view>
 		<view class="payment-details-top">
 			<view class="list" v-for="(data, keys) in details" :key="keys">
-				<view>{{data.fee_name}}</view>
+				<view class="payment-details-pad_top">{{data.fee_name}}</view>
 				<view class="details-top-project">
-					<text class="details-top-data">{{data.start_time}}至{{data.end_time}}</text>
+					<text class="details-top-data" v-if="data.cate!=3">{{data.start_time}}至{{data.end_time}}</text>
+					<text class="details-top-data" v-else>一次性费用</text>
 					<text>{{data.use_real_money}}</text>
 				</view>
 			</view>
@@ -51,8 +52,10 @@
 			_self.getFeeOrderInfo();
 		},
 		methods: {
+			
 			// 获取缴费订单详情
 			getFeeOrderInfo: function() {
+				var member_id = uni.getStorageSync('user_id')
 				uni.request({
 					url: serviceUrl + 'personal_center/getFeeOrderInfo',
 					data: {

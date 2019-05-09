@@ -1,11 +1,11 @@
 <template>
 	<view class="switch">
 		<view class="switch-top">
-			<view class="switch-content current-active">
+			<view class="switch-content current-active" style="padding:0 30rpx">
 				<text>{{houseName}}</text>
 				<text>当前</text>
 			</view>
-			<view v-for="(room, room_key) in userRoomlist" :key="room_key" class="switch-content switch-active">
+			<view v-for="(room, room_key) in userRoomlist" :key="room_key" class="switch-content switch-active" style="padding:0 30rpx">
 				<text>{{room.room_type_name}}:{{room.full_room_name}}</text>
 				<text @click="tab" v-bind:id="room.user_room_id">切换</text>
 			</view>
@@ -35,7 +35,7 @@
 		},
 		onLoad() {
 			_self = this
-			this.getMemberRoom()	// 获取用户房间列表
+			_self.getMemberRoom()	// 获取用户房间列表
 		},
 		methods: {
 			tab:function(e){
@@ -51,6 +51,7 @@
 			},
 			// 获取用户房间数据
 			getMemberRoom: function (e) {
+				var member_id  = uni.getStorageSync('user_id')
 				uni.request({
 					url: serviceUrl + 'personal_center/index',
 					data: {
@@ -64,7 +65,7 @@
 							 console.log(res.data.data);
 							 if(res.data.data){
 								 _self.userRoomlist = res.data.data.list
-								 _self.houseName = res.data.data.is_default.room_type_name+'：'+res.data.data.is_default.full_room_name
+								 _self.houseName = res.data.data.is_default.room_type_name+':'+res.data.data.is_default.full_room_name
 								 _self.name = res.data.data.name
 							 }
 							
@@ -93,7 +94,7 @@
 								title: '切换成功'
 							});
 							
-							uni.redirectTo({
+							uni.reLaunch({
 								url: '/pages/index/index'
 							});
 							//console.log('操作完成！');

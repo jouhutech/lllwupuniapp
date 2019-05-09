@@ -1,24 +1,26 @@
 <template>
 	<view class="payment-history">
 		<view class="payment-history-top">
-			<view class="history-top-title">此历史缴费时间</view>
-			<view class="history-top-time">
-				<picker mode="date" :value="date" :start="startDate" @change="startDateChange">
-					<view class="uni-input">{{start_time}}</view>
-				</picker>
-				<text>至</text>
-				<picker mode="date" :value="date" :end="endDate" @change="endDateChange">
-					<view class="uni-input">{{end_time}}</view>
-				</picker>
+			<view class="payment-history-padd">
+				<view class="history-top-title">此历史缴费时间</view>
+				<view class="history-top-time">
+					<picker mode="date" :value="date" :start="startDate" @change="startDateChange">
+						<view class="uni-input">{{start_time}}</view>
+					</picker>
+					<text>至</text>
+					<picker mode="date" :value="date" :end="endDate" @change="endDateChange">
+						<view class="uni-input">{{end_time}}</view>
+					</picker>
+				</view>
 			</view>
 		</view>
 		<view class="payment-history-top">
 			<view class="order_list" v-for="(date,key) in fee_order_list" v-bind:key="key" v-bind:id="key" @click="look_details">
 				<view class="history-top-title">	
-					<view class="order_list_name" v-for="(details,details_key) in date.details" v-bind:id="details_key" v-bind:key="details_key">
+					<text class="order_list_name" v-for="(details,details_key) in date.details" v-bind:id="details_key" v-bind:key="details_key">
 						{{details.fee_type_name}}
 						<!-- 物业费/生活垃圾处理费/水费/电费 -->
-					</view>
+					</text>
 				</view>
 				<view class="details-top-project">
 					<text class="details-top-data">{{date.create_time_name}}</text>
@@ -89,9 +91,11 @@
 		methods: {
 			startDateChange: function(e) {
 				_self.start_time = e.target.value
+				_self.getFeeOrderList()
 			},
 			endDateChange: function(e) {
 				_self.end_time = e.target.value
+				_self.getFeeOrderList()
 			},
 			getDate(type) {
 				const date = new Date();
@@ -110,6 +114,7 @@
 			},
 			// 获取缴费订单列表
 			getFeeOrderList : function (e) {
+				var member_id = uni.getStorageSync('user_id')
 				uni.request({
 					url: serviceUrl + 'personal_center/getFeeOrderList',
 					data: {
