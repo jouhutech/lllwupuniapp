@@ -12,7 +12,7 @@
 		{
 			"path" : "pages/payment/index",
 		    "style" : {
-		        "navigationBarTitleText" : "怡众名城",
+		        "navigationBarTitleText" : "优狐小区",
 				"navigationBarBackgroundColor" : "#4487f7",
 				"navigationBarTextStyle" : "white"
 		    }
@@ -36,11 +36,15 @@
 		{
 		    "path" : "pages/payment-details/index",
 		    "style" : {}
+		},
+		{
+		    "path" : "pages/binding/index",
+		    "style" : {}
 		}
     ],
     "globalStyle" : {
         "navigationBarTextStyle" : "black",
-        "navigationBarTitleText" : "怡众名城",
+        "navigationBarTitleText" : "优狐小区",
         "navigationBarBackgroundColor" : "#F8F8F8",
         "backgroundColor" : "#F8F8F8"
     }
