@@ -53,3 +53,7 @@
 .switch-top {
 	margin-bottom: 98upx;
 }
+
+.switch-bottom button{
+	border-radius: 0;
+}

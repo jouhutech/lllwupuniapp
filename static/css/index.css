@@ -53,7 +53,12 @@
 	box-shadow: 0px 5px 24px 0px rgba(199, 199, 199, 0.47);
 	border: solid 1px #ececec;
 	color: #FFFFFF;
-	margin-top: 34upx;
+	margin-top: 22upx;
+	height:100rpx;
+	line-height:100rpx;
+	border-radius: 20upx;
+	text-align: center;
+	font-size: 34upx;
 }
 
 

@@ -5,7 +5,7 @@
 	border-bottom: #E8E8E8 1upx solid;
 }
 
-.payment-details-top view:first-child {
+.payment-details-top .payment-details-pad_top {
 	padding-top: 34upx;
 }
 
